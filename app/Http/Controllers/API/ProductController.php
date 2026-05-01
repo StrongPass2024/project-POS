@@ -1,0 +1,205 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Transection;
+
+class ProductController extends Controller
+{
+    // ✅ GET /products
+    public function index()
+    {
+
+       $sort = \Request::get('sort', 'asc');
+       $perPage = \Request::get('perPage');
+       $search = \Request::get('search', '');
+       $categoryFilter = \Request::get('category', 'all'); 
+
+        // join with categories to get CategoryName ande select products with category name
+        $products = Product::join('categories', 'products.CategoryID', '=', 'categories.id')
+        ->select('products.*', 'categories.CategoryName');
+
+        // category filter
+        if ($categoryFilter !== 'all') {
+            $products = $products->where('products.CategoryID', $categoryFilter);
+        }
+
+        // search filter
+        if ($search !=='') {
+            $products = $products->where(
+                function($query) use ($search) {
+                    $query->where('products.ProductName', 'like', '%' . $search . '%')
+                          ->orWhere('categories.CategoryName', 'like', '%' . $search . '%')
+                          ->orWhere('products.PriceBuy', 'like', '%' . $search . '%')
+                          ->orWhere('products.PriceSell', 'like', '%' . $search . '%');
+                }
+            );
+        }
+
+        if($perPage === 'all' ){
+            $products = $products->orderBy('products.id', $sort)->get();
+        } else {
+             $products = $products->orderBy('products.id', $sort)
+            ->paginate($perPage);
+        }
+
+      
+
+        return response()->json($products);
+    }
+
+    // ✅ POST /products
+    public function store(Request $request)
+    {
+        try {
+
+            // ✅ Image Upload (optional)
+            $imagePath = null;
+            $imageName = '';
+            if ($request->hasFile('ImagePath')) {
+                $file = $request->file('ImagePath');
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('assets/img/products/'), $imageName);
+                $imagePath = 'assets/img/products/' . $imageName;
+            }
+
+            $product = new Product();
+            $product->ProductName = $request->ProductName;
+            $product->CategoryID = $request->CategoryID;
+            $product->ImagePath = $imageName;
+            $product->Qty = $request->Qty;
+            $product->PriceBuy = $request->PriceBuy;
+            $product->PriceSell = $request->PriceSell;
+            $product->save();
+
+
+            // add transection record
+            $tran_id = 'TRN'.date('YmdHis').rand(1000, 9999);   
+            $transection = new Transection();
+            $transection->TranID = $tran_id;
+            $transection->TranType = 'expense';
+            $transection->ProductID = $product->id;
+            $transection->Qty = $request->Qty;
+            $transection->Price = $request->PriceBuy*$request->Qty;
+            $transection->Detail = 'ເພີ່ມສິນຄ້າ: '.$request->ProductName;
+            $transection->save();
+
+
+            $success = true;
+            $message = "ເພີ່ມສິນຄ້າສຳເລັດ";
+
+        } catch (\Illuminate\Database\QueryException $ex) {
+            $success = false;
+            $message = $ex->getMessage();
+        }
+
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+        ], 201);
+    }
+
+    // ✅ GET /products/{id}
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return response()->json($product);
+    }
+
+    // ✅ PUT /products/{id}
+    public function update(Request $request, $id)
+    {
+        try {
+
+            $product = Product::find($id);
+
+            if (!$product) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Product not found',
+                ], 404);
+            }
+
+            // ✅ Update new image if uploaded
+            if ($request->hasFile('ImagePath')) {
+
+                // delete old image
+                if ($product->ImagePath && file_exists(public_path('assets/img/products/'.$product->ImagePath))) {
+                    unlink(public_path('assets/img/products/'.$product->ImagePath));
+                }
+
+                $file = $request->file('ImagePath');
+                $imageName = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('assets/img/products/'), $imageName);
+                $product->ImagePath = $imageName; // update image path
+            }
+
+            if($request->ImagePath === null){
+                // delete old image
+                if ($product->ImagePath && file_exists(public_path('assets/img/products/'.$product->ImagePath))) {
+                    unlink(public_path('assets/img/products/'.$product->ImagePath));
+                }
+                $product->ImagePath = null; // remove image path
+            }
+
+            $product->ProductName = $request->ProductName;
+            $product->CategoryID = $request->CategoryID;
+            $product->Qty = $request->Qty;
+            $product->PriceBuy = $request->PriceBuy;
+            $product->PriceSell = $request->PriceSell;
+
+            $product->save();
+
+            $success = true;
+            $message = "ແກ້ໄຂສິນຄ້າສຳເລັດ";
+
+        } catch (\Illuminate\Database\QueryException $ex) {
+            $success = false;
+            $message = $ex->getMessage();
+        }
+
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+        ], 200);
+    }
+
+    // ✅ DELETE /products/{id}
+    public function destroy($id)
+    {
+        try {
+
+            $product = Product::find($id);
+
+            if (!$product) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Product not found',
+                ], 404);
+            }
+
+            // delete image
+            if ($product->ImagePath && file_exists(public_path($product->ImagePath))) {
+                unlink(public_path($product->ImagePath));
+            }
+
+            $product->delete();
+
+            $success = true;
+            $message = "ລຶບສິນຄ້າສຳເລັດ";
+
+        } catch (\Illuminate\Database\QueryException $ex) {
+            $success = false;
+            $message = $ex->getMessage();
+        }
+
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+        ], 200);
+    }
+}
