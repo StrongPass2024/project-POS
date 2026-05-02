@@ -57,7 +57,7 @@
               </div>
               <div class="alert alert-warning" role="alert" v-if="message_login">{{ message_login }}</div>
               <div class="mb-6"> 
-                <button class="btn btn-primary d-grid w-100" @click="Login()" :disabled="isFormValid">ເຂົ້າສູ່ລະບົບ</button>
+                <button class="btn btn-dark d-grid w-100" @click="Login()" :disabled="isFormValid">ເຂົ້າສູ່ລະບົບ</button>
               </div>
            
           </div>

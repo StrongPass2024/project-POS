@@ -46,7 +46,7 @@
                         
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" @click="SaveCat()">ບັນທຶກ</button>
+                        <button type="button" class="btn btn-dark" @click="SaveCat()">ບັນທຶກ</button>
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ຍົກເລີກ</button>
                       </div>
                     </form>

@@ -90,18 +90,10 @@
             <div class="dropdown-divider my-1"></div>
           </li>
           <li>
-            <a class="dropdown-item" href="#"> <i class="icon-base bx bx-user icon-md me-3"></i><span>My Profile</span> </a>
+            
           </li>
           <li>
-            <a class="dropdown-item" href="#"> <i class="icon-base bx bx-cog icon-md me-3"></i><span>Settings</span> </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              <span class="d-flex align-items-center align-middle">
-                <i class="flex-shrink-0 icon-base bx bx-credit-card icon-md me-3"></i><span class="flex-grow-1 align-middle">Billing Plan</span>
-                <span class="flex-shrink-0 badge rounded-pill bg-danger">4</span>
-              </span>
-            </a>
+           
           </li>
           <li>
             <div class="dropdown-divider my-1"></div>
@@ -136,29 +128,7 @@
         
 
 <!-- Footer -->
-<footer v-if="authStore.isAuthenticated" class="content-footer footer bg-footer-theme">
-  <div class="container-xxl">
-    <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-      <div class="mb-2 mb-md-0">
-        &#169;
-       
-        , made with ❤️ by <a href="https://themeselection.com" target="_blank" class="footer-link">ThemeSelection</a>
-      </div>
-      <div class="d-none d-lg-inline-block">
-        <a href="https://themeselection.com/item/category/admin-templates/" target="_blank" class="footer-link me-4">Admin Templates</a>
-        
-          <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-          <a href="https://themeselection.com/item/category/bootstrap-admin-templates/" target="_blank" class="footer-link me-4">Bootstrap Dashboard</a>
-        
-        <a href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="footer-link me-4">Documentation</a>
-        
-          <a href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free/issues" target="_blank" class="footer-link">Support</a>
-        
-        
-      </div>
-    </div>
-  </div>
-</footer>
+
 <!-- / Footer -->
 
         
