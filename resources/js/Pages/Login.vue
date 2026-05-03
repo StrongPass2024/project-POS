@@ -17,19 +17,19 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-1">ຍິນດີຕ້ອນຮັບ 👋</h4>
-            <p class="mb-6">ກະລຸນາເຂົ້າສູ່ລະບົບ</p>
+            <h4 class="mb-1 fw-semibold">ຍິນດີຕ້ອນຮັບ 👋</h4>
+            <p class="mb-6 fw-semibold">ກະລຸນາເຂົ້າສູ່ລະບົບ</p>
 
               <!-- Email: {{ email }} <br>
               Password: {{ password }} <br>
               remember-me: {{ rememberMe }} <br> -->
               <div class="mb-6">
-                <label for="email" class="form-label">ອີເມວລ໌:</label>
+                <label for="email" class="form-label fw-semibold">ອີເມວລ໌:</label>
                 <input type="text" class="form-control" id="email" name="email-username" v-model="email" placeholder="ກະລຸນາໃສ່ອີເມວລ໌..." autofocus="">
                 <p class=" text-danger fs-6 " v-if="message_email" > {{message_email}}</p>
               </div>
               <div class="mb-6 form-password-toggle">
-                <label class="form-label" for="password">ລະຫັດຜ່ານ:</label>
+                <label class="form-label fw-semibold" for="password">ລະຫັດຜ່ານ:</label>
                 <div class="input-group input-group-merge">
                   <input :type="showpassword" id="password" class="form-control" v-model="password" name="password" placeholder="*******" aria-describedby="password">
                   <!-- <span class="input-group-text cursor-pointer" @click="showpassword = showpassword === 'password' ? 'text' : 'password'"> -->
@@ -50,7 +50,7 @@
                   <div class="form-check mb-0">
                     <input class="form-check-input" v-model="rememberMe" type="checkbox" id="remember-me">
                     
-                    <label class="form-check-label" for="remember-me"> ຈື່ຂ້ອຍໄວ້ໃນລະບົບ </label>
+                    <label class="form-check-label fw-semibold" for="remember-me"> ຈື່ຂ້ອຍໄວ້ໃນລະບົບ </label>
                   </div>
                  
                 </div>

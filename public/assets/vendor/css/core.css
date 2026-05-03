@@ -359,11 +359,11 @@ sup {
     top: -0.5em;
 }
 a {
-    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    color: var(--bs-dark);
     text-decoration: none;
 }
 a:hover {
-    --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
+    /* --bs-link-color-rgb: var(--bs-link-hover-color-rgb); */
 }
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
@@ -8104,7 +8104,7 @@ dd {
     margin-inline-start: 0;
 }
 a {
-    color: var(--bs-custom-link-color);
+    color: var(--bs-dark);
 }
 a:hover {
     color: color-mix(

@@ -31,15 +31,15 @@
                     <form class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="ModalAddCatTitle">
-                          <span v-if="FormType"> ເພີ່ມໝວດໝູ່ສິນຄ້າ</span> 
-                          <span v-else> ແກ້ໄຂໝວດໝູ່ສິນຄ້າ</span> 
+                          <span v-if="FormType" class="fw-semibold"> ເພີ່ມໝວດໝູ່ສິນຄ້າ</span> 
+                          <span v-else class="fw-semibold"> ແກ້ໄຂໝວດໝູ່ສິນຄ້າ</span> 
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
                         <div class="row">
                           <div class="col">
-                            <label for="nameSlideTop" class="form-label">ຊື້ໝວດໝູ່:</label>
+                            <label for="nameSlideTop" class="form-label fw-semibold">ຊື້ໝວດໝູ່:</label>
                             <input type="text" v-model="CategoryName" id="nameSlideTop" class="form-control" placeholder="Enter Name">
                           </div>
                         </div>

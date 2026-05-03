@@ -36,15 +36,15 @@
       <div class="table-responsive text-nowrap">
         <table class="table table-bordered">
           <thead class="table-dark">
-            <tr class="fw-semibold">
-              <th>#</th>
-              <th>ຮູບພາບ</th>
-              <th>ຊື່ສິນຄ້າ</th>
-              <th>ໝວດໝູ່</th>
-              <th>ຈຳນວນ</th>
-              <th>ລາຄາຊຶ້</th>
-              <th>ລາຄາຂາບ</th>
-              <th>ແກ້ໄຂ</th>
+            <tr>
+              <th class="fw-semibold fs-6">#</th>
+              <th class="fw-semibold fs-6">ຮູບພາບ</th>
+              <th class="fw-semibold fs-6">ຊື່ສິນຄ້າ</th>
+              <th class="fw-semibold fs-6">ໝວດໝູ່</th>
+              <th class="fw-semibold fs-6">ຈຳນວນ</th>
+              <th class="fw-semibold fs-6">ລາຄາຊຶ້</th>
+              <th class="fw-semibold fs-6">ລາຄາຂາບ</th>
+              <th class="fw-semibold fs-6">ແກ້ໄຂ</th>
             </tr>
           </thead>
           <tbody class="table-border-bottom-0">
