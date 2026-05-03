@@ -1,6 +1,6 @@
 <template lang="">
     
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="background-color: var(--bs-gray-60);">
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" >
   
   <div class="app-brand demo ">
     <a href="" class="app-brand-link ">
