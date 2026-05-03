@@ -3,7 +3,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header border-bottom pb-2 d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0 fw-semibold">ໝວດໝູ່ສິນຄ້າ</h5>
+                    <h5 class="mb-0 fw-semibold" style="color: var(--bs-black);">ໝວດໝູ່ສິນຄ້າ</h5>
                     <button type="button" class="btn rounded-pill btn-icon btn-dark" @click="AddCat()">
                      <i class='bx bx-list-plus fs-4'></i>
                     </button>
@@ -31,8 +31,8 @@
                     <form class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="ModalAddCatTitle">
-                          <span v-if="FormType" class="fw-semibold"> ເພີ່ມໝວດໝູ່ສິນຄ້າ</span> 
-                          <span v-else class="fw-semibold"> ແກ້ໄຂໝວດໝູ່ສິນຄ້າ</span> 
+                          <span v-if="FormType" class="fw-semibold" style="color: var(--bs-black);"> ເພີ່ມໝວດໝູ່ສິນຄ້າ</span> 
+                          <span v-else class="fw-semibold" style="color: var(--bs-black);"> ແກ້ໄຂໝວດໝູ່ສິນຄ້າ</span> 
                         </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>

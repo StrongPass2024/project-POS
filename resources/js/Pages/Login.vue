@@ -17,23 +17,23 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-1 fw-semibold">ຍິນດີຕ້ອນຮັບ 👋</h4>
-            <p class="mb-6 fw-semibold">ກະລຸນາເຂົ້າສູ່ລະບົບ</p>
+            <h4 class="mb-1 fw-semibold" style="color: var(--bs-black);">ຍິນດີຕ້ອນຮັບ 👋</h4>
+            <p class="mb-6 fw-semibold" >ກະລຸນາເຂົ້າສູ່ລະບົບ</p>
 
               <!-- Email: {{ email }} <br>
               Password: {{ password }} <br>
               remember-me: {{ rememberMe }} <br> -->
               <div class="mb-6">
                 <label for="email" class="form-label fw-semibold">ອີເມວລ໌:</label>
-                <input type="text" class="form-control" id="email" name="email-username" v-model="email" placeholder="ກະລຸນາໃສ່ອີເມວລ໌..." autofocus="">
+                <input type="text" class="form-control" style="border-color: var(--bs-gray);" id="email" name="email-username" v-model="email" placeholder="ກະລຸນາໃສ່ອີເມວລ໌..." autofocus="">
                 <p class=" text-danger fs-6 " v-if="message_email" > {{message_email}}</p>
               </div>
               <div class="mb-6 form-password-toggle">
                 <label class="form-label fw-semibold" for="password">ລະຫັດຜ່ານ:</label>
                 <div class="input-group input-group-merge">
-                  <input :type="showpassword" id="password" class="form-control" v-model="password" name="password" placeholder="*******" aria-describedby="password">
+                  <input :type="showpassword" id="password" class="form-control" style="border-color: var(--bs-gray); " v-model="password" name="password" placeholder="*******" aria-describedby="password">
                   <!-- <span class="input-group-text cursor-pointer" @click="showpassword = showpassword === 'password' ? 'text' : 'password'"> -->
-                  <span class="input-group-text cursor-pointer" @click="ShowPass()">
+                  <span class="input-group-text cursor-pointer" style="border-color: var(--bs-gray);"  @click="ShowPass()">
 
                     <!-- <i class="icon-base bx" :class="showpassword === 'password' ? 'bx-hide' : 'bx-show'"></i> -->
 
@@ -50,7 +50,7 @@
                   <div class="form-check mb-0">
                     <input class="form-check-input" v-model="rememberMe" type="checkbox" id="remember-me">
                     
-                    <label class="form-check-label fw-semibold" for="remember-me"> ຈື່ຂ້ອຍໄວ້ໃນລະບົບ </label>
+                    <label class="form-check-label fw-semibold" style="color: var(--bs-black);" for="remember-me"> ຈື່ຂ້ອຍໄວ້ໃນລະບົບ </label>
                   </div>
                  
                 </div>

@@ -2,7 +2,7 @@
       <div class="row">
         <div class="col-md-14">
             <div class="card">
-      <h5 class="card-header fw-semibold">ລາຍການສິນຄ້າ</h5>
+      <h5 class="card-header fw-semibold" style="color: var(--bs-black);">ລາຍການສິນຄ້າ</h5>
     <div class="card-body">
 
         <div class="row">
@@ -11,21 +11,21 @@
                   <i class='bx bx-sort-up fs-4'></i>
                   <i class='bx bx-sort-down fs-4'></i>
                 </div>
-                <select class="form-select w-auto me-2 fw-semibold">
+                <select class="form-select w-auto me-2 fw-semibold" style="border-color: var(--bs-gray);">
                     <option value="10">10</option>
                     <option value="20">20</option>
                     <option value="30">30</option>
               </select>
 
-              <select class="form-select w-auto fw-semibold">
+              <select class="form-select w-auto fw-semibold" style="border-color: var(--bs-gray);">
                     <option :value="category.id" v-for="category in Categories" :key="category.id">{{ category.CategoryName }}</option>
               </select>
 
             </div>
             <div class="col-lg-6 mb-4 d-flex align-items-center justify-content-end">
                 <div class="input-group input-group-merge w-auto me-3 fw-semibold">
-                  <span class="input-group-text" id="basic-addon-search31"><i class="icon-base bx bx-search"></i></span>
-                  <input type="text" class="form-control" placeholder="ຄົ້ນຫາ...">
+                  <span class="input-group-text" id="basic-addon-search31" style="border-color: var(--bs-gray);"><i class="icon-base bx bx-search"></i></span>
+                  <input type="text" class="form-control" style="border-color: var(--bs-gray);" placeholder="ຄົ້ນຫາ...">
                 </div>
                 <button type="button" class="btn btn-dark fw-normal" @click="AddProduct()">ເພີ່ມສິນຄ້າ</button>
             </div>

@@ -20,7 +20,7 @@
     --bs-gray: #7a838b;
     --bs-gray-dark: #4e5965;
     --bs-gray-25: #fbfbfb;
-    --bs-gray-60: #f2f3f3;
+    --bs-gray-60: #949696;
     --bs-gray-80: #edeef0;
     --bs-gray-100: #e9eaec;
     --bs-gray-200: #e4e6e8;
@@ -2477,9 +2477,9 @@ progress {
 .form-control:focus {
     color: var(--bs-heading-color);
     background-color: rgba(0, 0, 0, 0);
-    border-color: var(--bs-primary);
+    border-color: var(--bs-secondary);
     outline: 0;
-    box-shadow: 0 0.125rem 0.25rem 0 rgba(var(--bs-primary-rgb), 0.4);
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(var(--bs-secondary-rgb), 0.4);
 }
 .form-control::-webkit-date-and-time-value {
     min-width: 85px;
@@ -2622,10 +2622,11 @@ textarea.form-control-lg {
         transition: none;
     }
 }
-.form-select:focus {
-    border-color: var(--bs-primary);
+.form-select:focus {  /* For Firefox to prevent focus on the SVG icon */
+    border-color: var(--bs-secondary);
     outline: 0;
-    box-shadow: 0 0.125rem 0.25rem 0 rgba(var(--bs-primary-rgb), 0.4);
+    box-shadow: 0 0.125rem 0.25rem 0(var(--bs-secondary)#8592a3, 0.4);
+
 }
 .form-select[multiple],
 .form-select[size]:not([size="1"]) {
@@ -8843,11 +8844,11 @@ img[data-app-light-img][data-app-dark-img] {
 }
 .input-group:focus-within,
 .input-group:focus {
-    box-shadow: 0 0 0 var(--bs-border-width) var(--bs-primary);
+    box-shadow: 0 0 0 var(--bs-border-base-color) var(--bs-base-color);
 }
 .input-group:focus-within::before,
 .input-group:focus::before {
-    box-shadow: 0 0.125rem 0.25rem 0 rgba(var(--bs-primary-rgb), 0.4);
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(var(--bs-secondary-rgb), 0.4);
 }
 .input-group:focus-within:not(.input-group-merge) .form-control,
 .input-group:focus-within:not(.input-group-merge) .form-select,
