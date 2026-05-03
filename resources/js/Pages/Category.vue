@@ -3,8 +3,8 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header border-bottom pb-2 d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0">ໝວດໝູ່ສິນຄ້າ</h5>
-                    <button type="button" class="btn rounded-pill btn-icon btn-primary" @click="AddCat()">
+                    <h5 class="mb-0 fw-semibold">ໝວດໝູ່ສິນຄ້າ</h5>
+                    <button type="button" class="btn rounded-pill btn-icon btn-dark" @click="AddCat()">
                      <i class='bx bx-list-plus fs-4'></i>
                     </button>
                 </div>

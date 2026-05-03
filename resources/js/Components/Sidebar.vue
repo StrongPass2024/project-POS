@@ -1,9 +1,9 @@
 <template lang="">
     
-<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="background-color: var(--bs-gray-60);">
   
   <div class="app-brand demo ">
-    <a href="index.html" class="app-brand-link">
+    <a href="" class="app-brand-link ">
       <span class="app-brand-logo demo">
 <span class="text-primary">
 
@@ -11,18 +11,18 @@
 </span>
 </span>
       <span>
-      <!-- <img src="/public/assets/img/cashier.png" class="w-25 " alt="Logo"> -->
+        <span class="app-brand-text demo menu-text fw-semibold ms-2">ລະບົບ POS</span>
       </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2">ລະບົບ POS</span>
+      <img src="/public/assets/img/cashier.png" class="w-25 " alt="Logo">
     </a>
 
-    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+    <!-- <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
       <i class="bx bx-chevron-left d-block d-xl-none align-middle"></i>
-    </a>
+    </a> -->
   </div>
 
   
-  <div class="menu-divider mt-0  "></div>
+  <div class="menu-divider mt-2"></div>
 
   <div class="menu-inner-shadow"></div>
 
@@ -33,7 +33,7 @@
       <li class="menu-item mb-1" v-for="item in menuItems" :key="item.name" :class="{'active': item.active}" > 
         <router-link :to="item.link" class="menu-link d-flex align-items-center text-dark text-decoration-none px-3 py-2 rounded hover-bg-light">
           <i :class="['menu-icon', 'bx', item.icon, 'me-3', 'fs-5']"></i>
-          <div class="text-truncate">{{ item.label }}</div>
+          <div class="text-truncate fw-semibold">{{ item.label }}</div>
         </router-link>
       </li>
 

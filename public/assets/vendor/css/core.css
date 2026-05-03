@@ -11591,7 +11591,9 @@ li:not(:first-child) .dropdown-item,
     width: 20% !important;
 }
 .w-25 {
-    width: 25% !important;
+    width: 30% !important;
+    margin-left: 5px !important;
+    padding-left: 8px !important;
 }
 .w-50 {
     width: 50% !important;
@@ -21119,7 +21121,7 @@ li:not(:first-child) .dropdown-item,
 .menu-divider {
     border: 0;
     border-block-start: 1px solid;
-    border-block-start-color: var(--bs-menu-divider-color);
+    border-block-start-color: var(--bs-gray-300);
     inline-size: 100%;
 }
 .menu-vertical {
@@ -21147,7 +21149,7 @@ li:not(:first-child) .dropdown-item,
     .menu-inner
     > .menu-item.active::before {
     position: absolute;
-    background-color: var(--bs-primary);
+    background-color: var(--bs-gray-300);
     block-size: 2.6845rem;
     content: "";
     inline-size: 0.25rem;
@@ -21156,7 +21158,7 @@ li:not(:first-child) .dropdown-item,
     border-end-start-radius: 0.375rem;
 }
 .menu-vertical .menu-inner > .menu-item.active > .menu-link:not(.menu-toggle) {
-    background-color: var(--bs-menu-active-bg);
+    background-color: var(--bs-gray-300);
     color: var(--bs-menu-active-color);
 }
 .menu-vertical .menu-inner > .menu-item .menu-link {
@@ -22957,6 +22959,7 @@ body:not(.modal-open) .layout-content-navbar .layout-navbar {
 .app-brand-link {
     display: flex;
     align-items: center;
+    height: 75px;
 }
 .menu-horizontal .app-brand,
 .menu-horizontal .app-brand + .menu-divider {
