@@ -94,7 +94,13 @@
             <div class="dropdown-divider my-1"></div>
           </li>
           <li>
-            <a class="dropdown-item" href="javascript:void(0);" @click="Logout()"> <i class="icon-base bx bx-power-off icon-md me-3"></i><span class="fw-semibold">ອອກຈາກລະບົບ</span> </a>
+            <!-- <a class="dropdown-item" href="javascript:void(0);" @click="Logout()"> <i class="icon-base bx bx-power-off icon-md me-3"></i><span class="fw-semibold">ອອກຈາກລະບົບ</span> </a> -->
+             <div class="d-grid px-4 pt-2 pb-1">
+              <a class="btn btn-danger d-flex waves-effect waves-light" href="javascript:void(0);" @click="Logout">
+                <span class="align-middle fw-semibold">ອອກຈາກລະບົບ</span>
+                <i class='bx bx-log-out ms-1 fs-5' style='color:#ffffff' ></i>
+              </a>
+            </div>
           </li>
         </ul>
       </li>
@@ -145,35 +151,31 @@
 
 </template>
 <script>
+import { useRouter } from 'vue-router';
 import axios from 'axios';
 import { useAuthStore } from './Stores/Auth';
 
 export default {
     setup() {
+        const router = useRouter();
         const authStore = useAuthStore();
-        return { authStore };
-    },
-    methods: {
-        Logout() {
-            
-            axios.get('/api/logout',{
-                headers: {
-                  Authorization: `Bearer ${this.authStore.getToken}`
-                }
-            }).then(response => {
 
-              if(response.data.success){
-                this.authStore.logout();
-                this.$router.push({ name: 'Login' });
-              } else {
-                console.log('Logout failed:', response.data.message);
-              }
-          
-            }).catch(error => {
+        const Logout = async () => {
+            try {
+                await axios.get('/api/logout', {
+                    headers: {
+                        Authorization: `Bearer ${authStore.getToken}`
+                    }
+                });
+            } catch (error) {
                 console.error('Logout error:', error);
-            });
+            } finally {
+                authStore.logout();
+                router.push({ name: 'Login' });
+            }
+        };
 
-        }
+        return { authStore, Logout };
     }
 }
 
