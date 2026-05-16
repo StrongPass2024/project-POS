@@ -76,77 +76,102 @@
   </div>
 </div>
 
-<div class="modal modal-top fade" id="StoreModal" tabindex="-1" style="display: none;" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
+<!-- Modal -->
+      <div class="modal modal-top fade" id="StoreModal" tabindex="-1" style="display: none;" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
                     <form class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalTopTitle">Modal title</h5>
+                        <h5 class="modal-title" id="modalTopTitle">
+                           <span>ເພີ່ມສິນຄ້າ</span>
+                           <span>ແກ້ໄຂສິນຄ້າ</span>
+                        </h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        <div class="row">
-                          <div class="col mb-6">
-                            <label for="nameSlideTop" class="form-label">Name</label>
-                            <input type="text" id="nameSlideTop" class="form-control" placeholder="Enter Name">
-                          </div>
+                          <div class="row">
+                            <div class="col-lg-4">ຮູບພາບ</div>
+                            <div class="col-lg-8">
+                                
+                             <div class="row">
+                              <div class="col-lg-8 mb-3">
+                                <label class="form-label">ຊື່ສິນຄ້າ:</label>
+                                <input type="text" class="form-control" placeholder=".......">
+                             </div>
+                              <div class="col-lg-4 mb-3">
+                                  <label class="form-label">ໝວດໝູ່ສິນຄ້າ:</label>
+                                  <select class="form-select fw-semibold" style="border-color: var(--bs-gray);">
+                                      <option :value="category.id" v-for="category in Categories" :key="categoryid">{{ category.CategoryName }}</option>
+                                  </select>
+                              </div>
                         </div>
-                        <div class="row g-6">
-                          <div class="col mb-0">
-                            <label for="emailSlideTop" class="form-label">Email</label>
-                            <input type="email" id="emailSlideTop" class="form-control" placeholder="xxxx@xxx.xx">
-                          </div>
-                          <div class="col mb-0">
-                            <label for="dobSlideTop" class="form-label">DOB</label>
-                            <input type="date" id="dobSlideTop" class="form-control">
-                          </div>
+                       
+                       <div class="row">
+                            <div class="col-lg-4 mb-3">
+                                <label class="form-ladel">ຈຳນວນ:</label>
+                                <input type="number" class="form-control" placeholder="......."> 
+                            </div>
+                       </div>
+                       <div class="row">
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-ladel">ລາຄາຊື້:</label>
+                                <input type="number" class="form-control" placeholder="......."> 
+                            </div>
+                            <div class="col-lg-6 mb-3">
+                                <label class="form-ladel">ລາຄາຂາຍ:</label>
+                                <input type="number" class="form-control" placeholder="......."> 
+                            </div>
+
+                       </div>
+
+
+                      </div>
                         </div>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-dark">ບັນທຶກ</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ຍົກເລີກ</button>
-                      </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-dark">ບັນທຶກ</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ຍົກເລີກ</button>
+                        </div>
                     </form>
-                  </div>
                 </div>
+        </div>
 </template>
 <script>
-import { useAuthStore } from '../Stores/Auth';
-import axios from 'axios';
+import { useAuthStore } from "../Stores/Auth";
+import axios from "axios";
 
 export default {
   setup() {
     const authStore = useAuthStore();
     return { authStore };
   },
-    data() {
-      return {
-          Categories: [],
-      };
+  data() {
+    return {
+      Categories: [],
+    };
+  },
+  methods: {
+    AddProduct() {
+      $("#StoreModal").modal("show");
     },
-    methods: {
-        AddProduct(){
-            $('#StoreModal').modal('show');
-        },
-        GetCate(){
-           axios.get('/api/categories', {
-              headers: {
-                Authorization: `Bearer ${this.authStore.token}`,
-              },
-           })
-             .then(response => {
-               this.Categories = response.data;
-             })
-             .catch(error => {
-               console.error('Error fetching categories:', error);
-             });
-        }
+    GetCate() {
+      axios
+        .get("/api/categories", {
+          headers: {
+            Authorization: `Bearer ${this.authStore.token}`,
+          },
+        })
+        .then((response) => {
+          this.Categories = response.data;
+        })
+        .catch((error) => {
+          console.error("Error fetching categories:", error);
+        });
     },
-    created() {
-        this.GetCate();
-    }
-
-}
+  },
+  created() {
+    this.GetCate();
+  },
+};
 </script>
 <style lang="">
-
 </style>

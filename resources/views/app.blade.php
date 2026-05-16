@@ -6,7 +6,7 @@
     <title>Document</title>
 
 
-    
+
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico">
 
     <!-- Fonts -->

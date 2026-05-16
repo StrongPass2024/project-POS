@@ -7,8 +7,7 @@
     
     
 
-
-
+ 
 
 <!-- Menu -->
      <!-- Check: {{ authStore.isAuthenticated }} -->
