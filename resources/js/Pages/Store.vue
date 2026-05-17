@@ -25,7 +25,7 @@
             <div class="col-lg-6 mb-4 d-flex align-items-center justify-content-end">
                 <div class="input-group input-group-merge w-auto me-3 fw-semibold">
                   <span class="input-group-text" id="basic-addon-search31" style="border-color: var(--bs-gray);"><i class="icon-base bx bx-search"></i></span>
-                  <input type="text" class="form-control" style="border-color: var(--bs-gray);" placeholder="ຄົ້ນຫາ...">
+                  <input type="text" class="form-control" style="border-color: var(--bs-gray);" placeholder="ຄົ້ນຫາ....">
                 </div>
                 <button type="button" class="btn btn-dark fw-normal" @click="AddProduct()">ເພີ່ມສິນຄ້າ</button>
             </div>
@@ -62,8 +62,8 @@
                 <div class="dropdown">
                   <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="icon-base bx bx-dots-vertical-rounded"></i></button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i> Edit</a>
-                    <a class="dropdown-item" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i> Delete</a>
+                    <a class="dropdown-item fw-semibold" href="javascript:void(0);"><i class="icon-base bx bx-edit-alt me-1"></i>ແກ້ໄຂ</a>
+                    <a class="dropdown-item fw-semibold" href="javascript:void(0);"><i class="icon-base bx bx-trash me-1"></i>ລົບ</a>
                   </div>
                 </div>
               </td>
@@ -81,7 +81,7 @@
               <div class="modal-dialog modal-lg">
                     <form class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalTopTitle">
+                        <h5 class="modal-title fw-semibold" id="modalTopTitle">
                            <span>ເພີ່ມສິນຄ້າ</span>
                            <span>ແກ້ໄຂສິນຄ້າ</span>
                         </h5>
@@ -89,16 +89,16 @@
                       </div>
                       <div class="modal-body">
                           <div class="row">
-                            <div class="col-lg-4">ຮູບພາບ</div>
+                            <div class="col-lg-4 fw-semibold">ຮູບພາບ</div>
                             <div class="col-lg-8">
                                 
                              <div class="row">
                               <div class="col-lg-8 mb-3">
-                                <label class="form-label">ຊື່ສິນຄ້າ:</label>
+                                <label class="form-label fw-semibold">ຊື່ສິນຄ້າ:</label>
                                 <input type="text" class="form-control" placeholder=".......">
                              </div>
                               <div class="col-lg-4 mb-3">
-                                  <label class="form-label">ໝວດໝູ່ສິນຄ້າ:</label>
+                                  <label class="form-label fw-semibold">ໝວດໝູ່ສິນຄ້າ:</label>
                                   <select class="form-select fw-semibold" style="border-color: var(--bs-gray);">
                                       <option :value="category.id" v-for="category in Categories" :key="categoryid">{{ category.CategoryName }}</option>
                                   </select>
@@ -107,17 +107,17 @@
                        
                        <div class="row">
                             <div class="col-lg-4 mb-3">
-                                <label class="form-ladel">ຈຳນວນ:</label>
+                                <label class="form-label fw-semibold">ຈຳນວນ:</label>
                                 <input type="number" class="form-control" placeholder="......."> 
                             </div>
                        </div>
                        <div class="row">
                             <div class="col-lg-6 mb-3">
-                                <label class="form-ladel">ລາຄາຊື້:</label>
+                                <label class="form-ladel fw-semibold">ລາຄາຊື້:</label>
                                 <input type="number" class="form-control" placeholder="......."> 
                             </div>
                             <div class="col-lg-6 mb-3">
-                                <label class="form-ladel">ລາຄາຂາຍ:</label>
+                                <label class="form-ladel fw-semibold">ລາຄາຂາຍ:</label>
                                 <input type="number" class="form-control" placeholder="......."> 
                             </div>
 

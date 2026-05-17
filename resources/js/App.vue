@@ -54,7 +54,7 @@
       
         <!-- Place this tag where you want the button to render. -->
         <li class="nav-item lh-1 me-4 ">
-          <a class="github-button" href="https://github.com/themeselection/sneat-bootstrap-html-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">ຜູ້ໃຊ້</a>
+          <a class="github-buttonc" href="" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">ຜູ້ໃຊ້</a>
         </li>
       
       <!-- User -->
@@ -90,13 +90,13 @@
            
           </li>
           <li>
-            <div class="dropdown-divider my-1"></div>
+            <!-- <div class="dropdown-divider my-1"></div> -->
           </li>
           <li>
             <!-- <a class="dropdown-item" href="javascript:void(0);" @click="Logout()"> <i class="icon-base bx bx-power-off icon-md me-3"></i><span class="fw-semibold">ອອກຈາກລະບົບ</span> </a> -->
              <div class="d-grid px-4 pt-2 pb-1">
-              <a class="btn btn-danger d-flex waves-effect waves-light" href="javascript:void(0);" @click="Logout">
-                <span class="align-middle fw-semibold">ອອກຈາກລະບົບ</span>
+              <a class="btn btn-danger d-flex waves-effect waves-light" href="javascript:void(0);" @click="Logout">PthemeP
+                <span class="align-middle fw-semibold" style="color:#ffffff">ອອກຈາກລະບົບ</span>
                 <i class='bx bx-log-out ms-1 fs-5' style='color:#ffffff' ></i>
               </a>
             </div>

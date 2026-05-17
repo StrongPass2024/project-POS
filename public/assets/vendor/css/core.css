@@ -3943,9 +3943,9 @@ fieldset:disabled .btn {
 }
 .dropdown-item.active,
 .dropdown-item:active {
-    color: var(--bs-dropdown-link-active-color);
+    /* color: var(--bs-dark); */
     text-decoration: none;
-    background-color: var(--bs-dropdown-link-active-bg);
+    /* background-color: var(--bs-dropdown-link-active-bg); */
 }
 .dropdown-item.disabled,
 .dropdown-item:disabled {
@@ -13068,6 +13068,7 @@ li:not(:first-child) .dropdown-item,
 }
 .fw-semibold {
     font-weight: 600 !important;
+    color: var(--bs-dark);
 }
 .fw-bold {
     font-weight: 700 !important;
