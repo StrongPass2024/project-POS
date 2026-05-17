@@ -8108,11 +8108,11 @@ a {
     color: var(--bs-dark);
 }
 a:hover {
-    color: color-mix(
+    /* color: color-mix(
         in sRGB,
         var(--bs-custom-link-color) 80%,
         var(--bs-base-color)
-    );
+    ); */
 }
 a:not([href]),
 a:not([href]):hover {

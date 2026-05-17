@@ -27,7 +27,7 @@
                   <span class="input-group-text" id="basic-addon-search31" style="border-color: var(--bs-gray);"><i class="icon-base bx bx-search"></i></span>
                   <input type="text" class="form-control" style="border-color: var(--bs-gray);" placeholder="ຄົ້ນຫາ....">
                 </div>
-                <button type="button" class="btn btn-dark fw-normal" @click="AddProduct()">ເພີ່ມສິນຄ້າ</button>
+                <button type="button" class="btn btn-dark" @click="AddProduct()">ເພີ່ມສິນຄ້າ</button>
             </div>
 
           </div> 
