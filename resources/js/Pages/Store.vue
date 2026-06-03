@@ -103,7 +103,7 @@
                                       <option :value="category.id" v-for="category in Categories" :key="categoryid">{{ category.CategoryName }}</option>
                                   </select>
                               </div>
-                        </div>
+                            </div>
                        
                        <div class="row">
                             <div class="col-lg-4 mb-3">

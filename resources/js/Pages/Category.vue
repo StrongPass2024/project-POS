@@ -12,8 +12,8 @@
             <div class="card-body p-0">
 
                 <div class="list-group list-group-flush fw-semibold">
-                  <a href="javascript:void(0);" v-for="category in CategoryList" :key="category.id" class="list-group-item list-group-item-action">
-                     <div class="d-flex justify-content-between align-items-center">
+                    <a href="javascript:void(0);" v-for="category in CategoryList" :key="category.id" class="list-group-item list-group-item-action">
+                    <div class="d-flex justify-content-between align-items-center">
                         <span>{{ category.CategoryName }}</span>
                         <div>
                             <i class='bx bxs-edit me-2 fs-4 text-warning' @click="EditCat(category.id)"></i>  <i class='bx bxs-trash fs-4 text-danger' @click="DeleteCat(category.id)"></i>
@@ -21,7 +21,7 @@
                      </div>
                   </a>
                 </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>

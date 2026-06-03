@@ -3,7 +3,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-lg-4 col-md-6 mt-8">
 
-    <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-wrapper authentication-basic container-p-y mt-10">
       <div class="authentication-inner">
         <!-- Register -->
         <div class="card px-sm-6 px-0">
