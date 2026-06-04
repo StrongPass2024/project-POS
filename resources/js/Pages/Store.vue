@@ -1,8 +1,8 @@
 <template lang="">
       <div class="row">
         <div class="col-md-14">
-            <div class="card">
-      <h5 class="card-header fw-semibold" style="color: var(--bs-black);">ລາຍການສິນຄ້າ</h5>
+    <div class="card">
+        <h5 class="card-header fw-semibold" style="color: var(--bs-black);">ລາຍການສິນຄ້າ</h5>
     <div class="card-body">
 
         <div class="row">

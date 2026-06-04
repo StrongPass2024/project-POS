@@ -1,16 +1,27 @@
 <template lang="">
     <div class="row">
+        
+        <div v-if="loading">     
+                <div class="d-flex align-items-center justify-content-center">
+                    <div class="spinner-border text-secondary me-3" role="status">
+                        <span class="visually-hidden">ກຳລັງໂຫຼດ...</span>
+                     </div> ກຳລັງໂຫຼດ...   
+                </div>
+        </div>
+        
+
         <div class="col-md-6">
-            <div class="card">
+            <div class="card mt-4">
                 <div class="card-header border-bottom pb-2 d-flex justify-content-between align-items-center">
                     <h5 class="mb-0 fw-semibold" style="color: var(--bs-black);">ໝວດໝູ່ສິນຄ້າ</h5>
                     <button type="button" class="btn rounded-pill btn-icon btn-dark" @click="AddCat()">
                      <i class='bx bx-list-plus fs-4'></i>
                     </button>
                 </div>
-
-            <div class="card-body p-0">
-
+                
+                
+            <div class="card-body p-0" v-if="!loading">
+                
                 <div class="list-group list-group-flush fw-semibold">
                     <a href="javascript:void(0);" v-for="category in CategoryList" :key="category.id" class="list-group-item list-group-item-action">
                     <div class="d-flex justify-content-between align-items-center">
@@ -68,8 +79,11 @@ export default {
             CategoryName:'',
             FormType: true,
             EditID:'',
+            loading: false,
          }
+         
      },
+
      methods: {
           AddCat(){
             this.FormType = true;
@@ -156,14 +170,17 @@ export default {
         
         GetCat(){
         // ດຶງຂໍ້ມູນໝວດໝູ່
+        this.loading = true;
             axios.get('/api/categories', {
                 headers: {
                     Authorization: `Bearer ${this.authStore.getToken}`
                 }
             }).then(response => {
                 this.CategoryList = response.data;
+                this.loading = false;
             }).catch(error => {
                 console.error('Error fetching categories:', error);
+                this.loading = false;
             });
 
         }

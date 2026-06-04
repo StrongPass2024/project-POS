@@ -61,7 +61,7 @@ export default {
                 },
                 { 
                     name: "pos", 
-                    label: "POS", 
+                    label: "ຂາຍ POS", 
                     icon: "bxs-cart-alt",
                     link: "/pos",
                     active: false,

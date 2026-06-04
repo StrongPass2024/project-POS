@@ -18,7 +18,7 @@
     
 
     <!-- Layout container -->
-    <div class="layout-page">
+    <div class="layout-page" style="background-color: var(--bs-tertiary-bg);">
       
       
 
@@ -114,12 +114,12 @@
       
 
       <!-- Content wrapper -->
-      <div class="content-wrapper">
+      <div class="content-wrapper" style="background-color: var(--bs-tertiary-bg);">
         
 
         <!-- Content -->
   <div class="container-xxl flex-grow-1 container-p-y">
-          
+      
      <router-view></router-view>
 
    </div>
