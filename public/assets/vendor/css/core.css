@@ -5047,7 +5047,8 @@ fieldset:disabled .btn {
 .active > .page-link {
     z-index: 3;
     color: var(--bs-pagination-active-color);
-    background-color: var(--bs-pagination-active-bg);
+    /* background-color: var(--bs-pagination-active-bg); */
+    background-color: var(--bs-dark);
     border-color: var(--bs-pagination-active-border-color);
 }
 .page-link.disabled,
@@ -10354,7 +10355,7 @@ li:not(:first-child) .dropdown-item,
 .pagination .page-item.active .page-link,
 .pagination li.active > a:not(.page-link) {
     box-shadow: 0 0.125rem 0.25rem 0
-        rgba(var(--bs-pagination-box-shadow-color), 0.4);
+        rgba(var(--bs-gay), 0.4);
     color: var(--bs-pagination-active-color);
 }
 .page-item.disabled .page-link,

@@ -22,6 +22,7 @@ class ProductController extends Controller
         // join with categories to get CategoryName ande select products with category name
         $products = Product::join('categories', 'products.CategoryID', '=', 'categories.id')
         ->select('products.*', 'categories.CategoryName');
+        
 
         // category filter
         if ($categoryFilter !== 'all') {

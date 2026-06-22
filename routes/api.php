@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\ProductController;
 
 Route::post('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
@@ -16,4 +17,13 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/categories/{id}', [CategoryController::class, 'show']);
     Route::post('/categories/update/{id}', [CategoryController::class, 'update']);
     Route::delete('/categories/delete/{id}', [CategoryController::class, 'destroy']);
+});
+
+// Product Routes group with auth:api middleware
+Route::middleware('auth:api')->group(function () {
+    Route::get('/products', [ProductController::class, 'index']);
+    Route::post('/products/add', [ProductController::class, 'store']);
+    Route::get('/products/{id}', [ProductController::class, 'show']);
+    Route::post('/products/update/{id}', [ProductController::class, 'update']);
+    Route::delete('/products/delete/{id}', [ProductController::class, 'destroy']);
 });
