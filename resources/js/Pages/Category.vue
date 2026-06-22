@@ -5,7 +5,7 @@
                 <div class="d-flex align-items-center justify-content-center">
                     <div class="spinner-border text-secondary me-3" role="status">
                         <span class="visually-hidden">ກຳລັງໂຫຼດ...</span>
-                     </div> ກຳລັງໂຫຼດ...   
+                     </div> <span class="fw-semibold">ກຳລັງໂຫຼດ...</span>
                 </div>
         </div>
         
